@@ -6,8 +6,8 @@ import Props from './src/ex_2';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Props mensagem={'Teste'} />
-      <Props nome={'Ewerton'} />
+      <Props mensagem={'Sistem react-native'} />
+      <Props mensagem={'Hoje está calor'} />
       <StatusBar style="auto" />
     </View>
   );
