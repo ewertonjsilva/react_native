@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Props from './src/ex_2';
+// import Props from './src/ex_2'; 
+import Atividade_1 from './src/atividade_1';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Props mensagem={'Sistem react-native'} />
-      <Props mensagem={'Hoje está calor'} />
+      {/* <Props mensagem={'Sistem react-native'} /> */}
+      <Atividade_1 />
       <StatusBar style="auto" />
     </View>
   );
@@ -16,8 +17,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center', 
+    padding: 18, 
   },
 });
