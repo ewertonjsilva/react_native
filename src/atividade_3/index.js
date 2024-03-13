@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
-export default function Exemplo_3 () {
+export default function Atividade_3 () {
 
     const [numero, setNumero] = useState(0);
 
@@ -19,7 +19,7 @@ export default function Exemplo_3 () {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.titulo}>Exemplo 3</Text>
+            <Text style={styles.titulo}>Atividade 3</Text>
 
             <TouchableOpacity 
                 style={styles.botao} 
