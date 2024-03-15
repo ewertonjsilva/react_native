@@ -17,6 +17,17 @@ export default function Atividade_3 () {
         // console.log(numero);
     }
 
+    function decremento() {        
+        const dec = numero - 1;
+        setNumero(dec);
+        // console.log(numero);
+    }
+
+    function zerar() {                
+        setNumero(0);
+        // console.log(numero);
+    }
+
     return(
         <View style={styles.container}>
             <Text style={styles.titulo}>Atividade 3</Text>
