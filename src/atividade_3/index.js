@@ -1,52 +1,73 @@
 import { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 
 import styles from './styles';
 
-export default function Atividade_3 () {
+export default function Atividade_3() {
 
     const [numero, setNumero] = useState(0);
 
-    function Ola (nome) {
-        alert(`Olá ${nome}`);
-    }   
-    
-    function incremento() {        
+    function incremento() {
         const inc = numero + 1;
         setNumero(inc);
-        // console.log(numero);
     }
 
-    function decremento() {        
+    function decremento() {
         const dec = numero - 1;
         setNumero(dec);
-        // console.log(numero);
     }
 
-    function zerar() {                
+    function zerar() {
         setNumero(0);
-        // console.log(numero);
     }
 
-    return(
+    return (
         <View style={styles.container}>
             <Text style={styles.titulo}>Atividade 3</Text>
 
-            <TouchableOpacity 
-                style={styles.botao} 
-                onPress={() => Ola('Ewerton')}
-            >
-                <Text style={styles.txtBotao}>Botão</Text>
-            </TouchableOpacity>
+            <View style={styles.containerHorizontal}>
+                <Pressable
+                    style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
+                    onPress={() => decremento()}
+                >
+                    <Text style={styles.txtBotao}>
+                        -
+                    </Text>
+                </Pressable >
 
-            <Text style={styles.titulo}>Valor: {numero}</Text>
+                <Text style={styles.titulo}>{numero}</Text>
 
-            <TouchableOpacity 
-                style={styles.botao} 
-                onPress={() => incremento()}
+                <Pressable
+                    style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
+                    onPress={() => incremento()}
+                >
+                    <Text style={styles.txtBotao}>
+                        +
+                    </Text>
+                </Pressable >
+            </View>
+
+            <Pressable
+                style={({ pressed }) => pressed ? [styles.botao, styles.botaoZerar, styles.botaoPress] : [styles.botao, styles.botaoZerar]}
+                onPress={() => zerar()}
             >
-                <Text style={styles.txtBotao}>+ 1</Text>
-            </TouchableOpacity>
+                <Text style={styles.txtBotao}>
+                    Zerar
+                </Text>
+            </Pressable >
         </View>
     );
 }
+
+/*
+Alternativa para animar a cor do Text 
+{
+    ({ pressed }) => (
+        <Text 
+            style={pressed ? [styles.txtBotao, styles.txtBotaoPress] : styles.txtBotao}
+        >
+            + 1
+        </Text>
+    )
+}
+*/
