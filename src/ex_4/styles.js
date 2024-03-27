@@ -29,6 +29,18 @@ const styles = StyleSheet.create({
         color: '#e53935', 
         borderRadius: 10, 
     }, 
+    botao: {
+        width: '70%', 
+        padding: 16, 
+        backgroundColor: '#b71c1c', 
+        alignItems: 'center', 
+        margin: 18, 
+        borderRadius: 20, 
+    }, 
+    txtBotao: {
+        color: '#f5f5f5', 
+        fontSize: 20,         
+    },
 }); 
 
 export default styles;
