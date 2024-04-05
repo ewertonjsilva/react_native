@@ -11,7 +11,7 @@ export default function Exemplo5() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.paragraph}> Exemplo 5 </Text>
+            <Text style={styles.titulo}> Exemplo 5 </Text>
 
             <Text style={styles.txtSaida}> Calculadora básica </Text>
 
@@ -33,7 +33,8 @@ export default function Exemplo5() {
                 onBlur={() => setIsFocusN1(false)} 
                 onChangeText={() => {}}
                 // value={n1.toString()}
-                // keyboardType='default'
+                // keyboardType='numeric'
+
             />
 
             <Text style={styles.txtSaida}> + </Text>

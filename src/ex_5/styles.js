@@ -7,10 +7,11 @@ const styles = StyleSheet.create({
       backgroundColor: '#FF80AB',
       padding: 8, 
       width: '100%', 
+      borderRadius: 20, 
     },
-    paragraph: {
+    titulo: {
       margin: 6,
-      fontSize: 18,
+      fontSize: 30,
       fontWeight: 'bold',
       textAlign: 'center', 
       color: '#C51162', 
@@ -27,10 +28,11 @@ const styles = StyleSheet.create({
       textAlign: 'center', 
       fontSize: 22, 
       borderColor: '#E91E63', 
-      height: 40, 
+      // height: 50, 
       color: '#E53935', 
       borderRadius: 10, 
       marginTop: 10, 
+      padding: 10
     }, 
     button: {
       backgroundColor: '#E91E63', 
