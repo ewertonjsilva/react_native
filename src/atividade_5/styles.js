@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center', 
       borderRadius: 10, 
       marginTop: 20, 
-      width: '100%', 
+      width: '20%', 
     }, 
     buttonTouch: {
         backgroundColor: '#C51162', 
@@ -55,6 +55,14 @@ const styles = StyleSheet.create({
       fontWeight: 'bold', 
       color: '#C51162',     
     }, 
+    botoes: {
+      flexDirection: 'row', 
+      width: '100%', 
+      justifyContent: 'space-between'
+    }, 
+    width100: {
+      width: '100%', 
+    }
   });
   
   export default styles;

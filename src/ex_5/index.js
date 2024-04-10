@@ -7,7 +7,14 @@ export default function Exemplo5() {
 
     const [isFocusN1, setIsFocusN1] = useState(false);
     const [isFocusN2, setIsFocusN2] = useState(false);
-    const [isFocusTotal, setIsFocusTotal] = useState(false);
+    const [isFocusTotal, setIsFocusTotal] = useState(false); 
+    const [n1, setN1] = useState(0); 
+    const [n2, setN2] = useState(0); 
+    const [total, setTotal] = useState(''); 
+
+    function soma() {
+        setTotal(parseFloat(n1) + parseFloat(n2));
+    }
 
     return (
         <View style={styles.container}>
@@ -31,8 +38,8 @@ export default function Exemplo5() {
                 }
                 onFocus={() => setIsFocusN1(true)}
                 onBlur={() => setIsFocusN1(false)} 
-                onChangeText={() => {}}
-                // value={n1.toString()}
+                onChangeText={(num1) => setN1(num1)}
+                value={n1}
                 // keyboardType='numeric'
 
             />
@@ -55,8 +62,8 @@ export default function Exemplo5() {
                 }
                 onFocus={() => setIsFocusN2(true)}
                 onBlur={() => setIsFocusN2(false)} 
-                onChangeText={() => {}}
-                // value={n2.toString()}
+                onChangeText={(num2) => setN2(num2)}
+                value={n2}
             />
 
             <Text style={[styles.txtSaida, { margin: 0 }]}> = </Text>
@@ -78,11 +85,11 @@ export default function Exemplo5() {
                 onFocus={() => setIsFocusTotal(true)}
                 onBlur={() => setIsFocusTotal(false)} 
                 editable={false}
-                // value={total.toString()}
+                value={total}
             />
 
             <Pressable
-                onPress={() => {}}
+                onPress={() => soma()}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
