@@ -85,7 +85,7 @@ export default function Exemplo5() {
                 onFocus={() => setIsFocusTotal(true)}
                 onBlur={() => setIsFocusTotal(false)} 
                 editable={false}
-                value={total}
+                value={total ? parseFloat(total).toFixed(2) : ''}
             />
 
             <Pressable
