@@ -7,13 +7,16 @@ import { StyleSheet, Text, View } from 'react-native';
 // import Atividade_3 from './src/atividade_3'; 
 // import Exemplo4 from './src/ex_4';
 // import Atividade4 from './src/atividade_4';
-import Exemplo5 from './src/ex_5';
+// import Exemplo5 from './src/ex_5'; 
+// import Atividade_5 from './src/atividade_5'; 
+
+import Exemplo_6 from './src/ex_6';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <Props mensagem={'Sistem react-native'} /> */}
-      <Exemplo5 />
+      <Exemplo_6 />
       <StatusBar style="auto" />
     </View>
   );
@@ -22,7 +25,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#c51162',
+    backgroundColor: '#aaa',
     alignItems: 'center',
     justifyContent: 'center', 
     padding: 18, 
