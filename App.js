@@ -10,13 +10,14 @@ import { StyleSheet, Text, View } from 'react-native';
 // import Exemplo5 from './src/ex_5'; 
 // import Atividade_5 from './src/atividade_5'; 
 
-import Exemplo_6 from './src/ex_6';
+// import Exemplo_6 from './src/ex_6';
+import Atividade_6 from './src/atividade_6';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <Props mensagem={'Sistem react-native'} /> */}
-      <Exemplo_6 />
+      <Atividade_6 />
       <StatusBar style="auto" />
     </View>
   );
