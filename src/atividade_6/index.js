@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Text, View, TextInput, Pressable } from 'react-native';
 
-import styles from './styles';
+import styles from './styles'; 
+
+import Calcular from './funcoes/Calcular';
 
 export default function Atividade_6 () {
 
@@ -13,32 +15,10 @@ export default function Atividade_6 () {
     const [isFocusMss, setIsFocusMss] = useState(false);
     const [isFocusAlt, setIsFocusAlt] = useState(false);
 
-    function Calcular() {
-        const valor = massa / (altura * altura);
-        setResultado(valor); 
-        const mens = DefineMensagem(valor); 
-        setMensagem(mens);
-    }
-
-    function DefineMensagem (calculo) {
-        if (calculo < 18.5) {
-            return('Abaixo do peso');
-        } 
-        if (calculo >= 18.5 && calculo < 25) {
-            return('Peso normal');
-        } 
-        if (calculo >= 25 && calculo < 30) {
-            return('Sobrepeso'); 
-        } 
-        if (calculo >= 30 && calculo < 35) {
-            return('Obesidade grau 1'); 
-        } 
-        if (calculo >= 35 && calculo < 40) {
-            return('Obesidade grau 2'); 
-        } 
-        if (calculo <= 40) {
-            return('Obesidade grau 3'); 
-        }
+    function ExibeResultado () {
+        const obj = Calcular(massa, altura); 
+        setResultado(obj.resultado); 
+        setMensagem(obj.mensagem);
     }
 
     return (
@@ -86,7 +66,7 @@ export default function Atividade_6 () {
                 style={({ pressed }) => pressed
                     ? [styles.button, { backgroundColor: '#eee' }]
                     : styles.button}
-                onPress={() => Calcular()}
+                onPress={() => ExibeResultado()}
             >
                 <Text style={styles.buttonText}> Calcular </Text>
             </Pressable>
