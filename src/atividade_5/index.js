@@ -10,7 +10,7 @@ export default function Atividade_5() {
 
     const [n1, setN1] = useState(0);
     const [n2, setN2] = useState(0);
-    const [total, setTotal] = useState('');
+    const [total, setTotal] = useState(0);
 
     function soma() {
         setTotal(parseFloat(n1) + parseFloat(n2));
@@ -51,7 +51,7 @@ export default function Atividade_5() {
             <Text style={[styles.txtSaida, { margin: 0 }]}> = </Text>
 
             <Text style={styles.textLabel}> Total </Text>
-            <Input valor={total} alzValor={setTotal} readOnly={true} />
+            <Input valor={parseFloat(total).toFixed(2)} alzValor={setTotal} readOnly={true} />
 
             <View style={styles.botoes}>                
                 <Botao sinal={'+'} operacao={soma} />

@@ -7,14 +7,38 @@ export default function Atividade_6 () {
 
     const [massa, setMassa] = useState(0);
     const [altura, setAltura] = useState(0);
-    const [resultado, setResultado] = useState(0);
+    const [resultado, setResultado] = useState(0); 
+    const [mensagem, setMensagem] = useState('');
 
     const [isFocusMss, setIsFocusMss] = useState(false);
     const [isFocusAlt, setIsFocusAlt] = useState(false);
 
     function Calcular() {
         const valor = massa / (altura * altura);
-        setResultado(valor);
+        setResultado(valor); 
+        const mens = DefineMensagem(valor); 
+        setMensagem(mens);
+    }
+
+    function DefineMensagem (calculo) {
+        if (calculo < 18.5) {
+            return('Abaixo do peso');
+        } 
+        if (calculo >= 18.5 && calculo < 25) {
+            return('Peso normal');
+        } 
+        if (calculo >= 25 && calculo < 30) {
+            return('Sobrepeso'); 
+        } 
+        if (calculo >= 30 && calculo < 35) {
+            return('Obesidade grau 1'); 
+        } 
+        if (calculo >= 35 && calculo < 40) {
+            return('Obesidade grau 2'); 
+        } 
+        if (calculo <= 40) {
+            return('Obesidade grau 3'); 
+        }
     }
 
     return (
@@ -67,6 +91,7 @@ export default function Atividade_6 () {
                 <Text style={styles.buttonText}> Calcular </Text>
             </Pressable>
             <Text style={styles.resultados}>{resultado.toFixed(2)}</Text>
+            <Text style={styles.resultados}>{mensagem}</Text>
         </View>
 
     );
