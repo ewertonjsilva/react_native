@@ -11,14 +11,15 @@ import { StyleSheet, Text, View } from 'react-native';
 // import Atividade_5 from './src/atividade_5'; 
 
 // import Exemplo_6 from './src/ex_6';
-import Atividade_6 from './src/atividade_6'; 
-import Exemplo7 from './src/ex_7';
+// import Atividade_6 from './src/atividade_6'; 
+// import Exemplo7 from './src/ex_7'; // finalizar erro várias divisões
+import Exemplo8 from './src/ex8';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <Props mensagem={'Sistem react-native'} /> */}
-      <Exemplo7 />
+      <Exemplo8 />
       <StatusBar style="auto" />
     </View>
   );
@@ -27,9 +28,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aaa',
-    alignItems: 'center',
-    justifyContent: 'center', 
+    backgroundColor: '#03a9f4',
+    // alignItems: 'center',
+    // justifyContent: 'center', 
     padding: 8, 
   },
 });
