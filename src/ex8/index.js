@@ -1,28 +1,44 @@
 import { useState } from 'react';
-import { View, FlatList, Text } from 'react-native'; 
+import { View, FlatList, Text } from 'react-native';
 
-import Header from './header'; 
-import ItemLista from './itemLista';
+import Header from './header';
+import ItemLista from './itemLista'; 
+import AddItem from './addItem';
 
-import styles from './styles'; 
+import styles from './styles';
 
-export default function Exemplo8 () { 
+export default function Exemplo8() {
 
     const [itens, setItens] = useState([
-        {id: 1, item: 'Leite'},         
-        {id: 2, item: 'Ovos'},         
-        {id: 3, item: 'Mamão'},         
-        {id: 4, item: 'Banana'},         
-        {id: 5, item: 'Alface'}         
+        { id: 1, nome: 'Leite' },
+        { id: 2, nome: 'Ovos' },
+        { id: 3, nome: 'Mamão' },
+        { id: 4, nome: 'Banana' },
+        { id: 5, nome: 'Alface' }
     ]);
 
-    return(
+    function deleteItem(id) {
+        setItens(
+            prevItens => {
+                return prevItens.filter(
+                    (item) => item.id != id
+                );
+            }
+        );
+    }
+
+    return (
         <View style={styles.container}>
-            <Header /> 
-            <FlatList 
-                data={itens} 
-                renderItem={ (objeto) => <ItemLista objeto={objeto.item} /> } 
-                // keyExtractor={item => item.id}
+            <Header />
+            <AddItem />
+            <FlatList
+                data={itens}
+                renderItem={(objeto) => 
+                    <ItemLista 
+                        dados={objeto.item} 
+                        deleteItem={deleteItem}
+                    />}
+                keyExtractor={item => item.id}
             />
         </View>
     );
