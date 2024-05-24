@@ -27,10 +27,22 @@ export default function Exemplo8() {
         );
     }
 
+    function addItem(item) {
+        if (item === '') {
+            alert('Insira um texto para adicionar na lista', [{text: 'Ok'}]);
+        } else {
+            setItens(
+                (prevItens) => {
+                    return [{ id: 999, nome: item }, ...prevItens];
+                }
+            );
+        }
+    }
+
     return (
         <View style={styles.container}>
             <Header />
-            <AddItem />
+            <AddItem adicionar={addItem} />
             <FlatList
                 data={itens}
                 renderItem={(objeto) => 
