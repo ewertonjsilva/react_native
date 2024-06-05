@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { View, FlatList } from 'react-native';
+import uuid from 'react-native-uuid';
 
 import Header from './header';
 import ItemLista from './itemLista'; 
@@ -10,11 +11,11 @@ import styles from './styles';
 export default function Exemplo8() {
 
     const [itens, setItens] = useState([
-        { id: 1, nome: 'Leite' },
-        { id: 2, nome: 'Ovos' },
-        { id: 3, nome: 'Mamão' },
-        { id: 4, nome: 'Banana' },
-        { id: 5, nome: 'Alface' }
+        { id: uuid.v4(), nome: 'Leite' },
+        { id: uuid.v4(), nome: 'Ovos' },
+        { id: uuid.v4(), nome: 'Mamão' },
+        { id: uuid.v4(), nome: 'Banana' },
+        { id: uuid.v4(), nome: 'Alface' }
     ]);
 
     function deleteItem(id) {
@@ -33,7 +34,7 @@ export default function Exemplo8() {
         } else {
             setItens(
                 (prevItens) => {
-                    return [{ id: 999, nome: item }, ...prevItens];
+                    return [{ id: uuid.v4(), nome: item }, ...prevItens];
                 }
             );
         }

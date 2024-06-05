@@ -3,7 +3,7 @@ import { Text, View, TextInput, Pressable } from 'react-native';
 
 import styles from './styles';
 
-export default function Exemplo_6 () {
+export default function Exemplo6 () {
 
     const [massa, setMassa] = useState(0);
     const [altura, setAltura] = useState(0);
