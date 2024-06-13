@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
- 
-import Exemplos from '../exemplos';
-import Atividades from '../atividades';
+
+import Exemplos from './stackExemplos';
+import Atividades from './stackAtividades'; 
 
 const Tab = createBottomTabNavigator();
 
